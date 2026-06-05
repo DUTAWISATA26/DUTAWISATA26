@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Card Duta Wisata 2026</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================================================
+           CSS Styling - Creator Rate Card Hub
+           ========================================================================== */
+
+        :root {
+            --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+            --shadow-glow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+
+            --color-gold: 212, 175, 55;
+            --color-rose: 236, 72, 153;
+            --color-cyan: 6, 182, 212;
+            --color-orange: 249, 115, 22;
+
+            --accent-rgb: var(--color-gold);
+            --accent-color: rgb(var(--accent-rgb));
+        }
+
+        .dark-theme {
+            --bg-app: #090b11;
+            --bg-card: rgba(17, 22, 34, 0.75);
+            --bg-card-hover: rgba(26, 33, 50, 0.85);
+            --bg-header: rgba(13, 17, 28, 0.8);
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.12);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --bg-input: rgba(15, 23, 42, 0.6);
+            --bg-pill: rgba(255, 255, 255, 0.05);
+            --glass-opacity: 0.75;
+            --glow-opacity: 0.15;
+        }
+
+        .light-theme {
+            --bg-app: #f4f6fa;
+            --bg-card: rgba(255, 255, 255, 0.75);
+            --bg-card-hover: rgba(255, 255, 255, 0.9);
+            --bg-header: rgba(255, 255, 255, 0.8);
+            --border-color: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(0, 0, 0, 0.12);
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --bg-input: rgba(255, 255, 255, 0.8);
+            --bg-pill: rgba(0, 0, 0, 0.04);
+            --glass-opacity: 0.8;
+            --glow-opacity: 0.08;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-app);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
+            position: relative;
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+            opacity: var(--glow-opacity);
+            transition: background-color var(--transition-slow);
+        }
+
+        .bg-glow-1 {
+            top: -20%;
+            left: -10%;
+            background-color: rgb(var(--accent-rgb));
+        }
+
+        .bg-glow-2 {
+            bottom: -20%;
+            right: -10%;
+            background-color: rgba(var(--accent-rgb), 0.5);
+        }
+
+        .app-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            min-height: 100vh;
+        }
+
+        .app-header {
+            background-color: var(--bg-header);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            box-shadow: var(--shadow-sm);
+            z-index: 10;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-color), rgba(var(--accent-rgb), 0.6));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.25rem;
+            box-shadow: var(--shadow-glow);
+            transition: transform var(--transition-normal), background var(--transition-normal);
+        }
+
+        .logo-area h1 {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .logo-area .subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .search-filter-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-grow: 1;
+            max-width: 700px;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex-grow: 1;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px 14px 10px 42px;
+            background-color: var(--bg-input);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        #search-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.15);
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-pill);
+            border: 1px solid transparent;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-btn:hover {
+            color: var(--text-primary);
+            background-color: var(--border-color);
+        }
+
+        .filter-btn.active {
+            background-color: var(--accent-color);
+            color: #fff;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background-color: var(--bg-pill);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            transition: all var(--transition-fast);
+        }
+
+        .icon-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+        }
+
+        .dark-theme .icon-sun,
+        .light-theme .icon-moon {
+            display: none;
+        }
+
+        /* ==========================================================================
+           Main Layout & Content Grid
+           ========================================================================== */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+            flex-grow: 1;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .creator-count {
+            font-size: 0.85rem;
+            font-weight: 500;
+            background-color: var(--bg-pill);
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: var(--text-muted);
+        }
+
+        .creator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 18px;
+        }
+
+        .creator-card {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .creator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, rgb(var(--card-accent-rgb, var(--accent-rgb))), transparent);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+        }
+
+        .creator-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(var(--card-accent-rgb, var(--accent-rgb)), 0.4);
+            box-shadow: var(--shadow-md), 0 10px 20px rgba(var(--card-accent-rgb, var(--accent-rgb)), 0.05);
+        }
+
+        .creator-card:hover::before {
+            opacity: 1;
+        }
+
+        .creator-card.active {
+            border-color: rgb(var(--card-accent-rgb, var(--accent-rgb)));
+            box-shadow: var(--shadow-md), 0 0 15px rgba(var(--card-accent-rgb, var(--accent-rgb)), 0.15);
+            background-color: var(--bg-card-hover);
+        }
+
+        .creator-card.active::before {
+            opacity: 1;
+        }
+
+        .card-top {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 68px;
+            height: 68px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            transition: border-color var(--transition-normal);
+            flex-shrink: 0;
+            background-color: var(--bg-pill);
+        }
+
+        .creator-card:hover .avatar-wrapper,
+        .creator-card.active .avatar-wrapper {
+            border-color: rgb(var(--card-accent-rgb, var(--accent-rgb)));
+        }
+
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-name {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .card-niche {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .card-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .tag-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background-color: var(--bg-pill);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 14px;
+            margin-top: auto;
+        }
+
+        .price-range {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-range-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        .price-range-value {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: rgb(var(--card-accent-rgb, var(--accent-rgb)));
+        }
+
+        .select-arrow {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background-color: var(--bg-pill);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: all var(--transition-fast);
+        }
+
+        .creator-card:hover .select-arrow {
+            background-color: rgb(var(--card-accent-rgb, var(--accent-rgb)));
+            color: #fff;
+            transform: translateX(4px);
+            box-shadow: 0 4px 10px rgba(var(--card-accent-rgb, var(--accent-rgb)), 0.3);
+        }
+
+        .creator-card.active .select-arrow {
+            background-color: rgb(var(--card-accent-rgb, var(--accent-rgb)));
+            color: #fff;
+        }
+
+        .skeleton-card {
+            height: 220px;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skeleton-card::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            animation: skeleton-sweep 1.5s infinite;
+        }
+
+        @keyframes skeleton-sweep {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ==========================================================================
+           Details & Calculator Drawer View
+           ========================================================================== */
+        .detail-section {
+            position: sticky;
+            top: 20px;
+            height: calc(100vh - 120px);
+        }
+
+        .empty-state-detail {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px dashed var(--border-color);
+            border-radius: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state-detail h3 {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .empty-state-detail p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 320px;
+            line-height: 1.5;
+        }
+
+        .creator-detail-card {
+            background-color: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .detail-banner {
+            height: 120px;
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.3) 0%, rgba(var(--accent-rgb), 0.05) 100%);
+            position: relative;
+        }
+
+        .detail-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, var(--bg-card), transparent);
+        }
+
+        .detail-profile {
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            padding: 0 24px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .detail-avatar-wrapper {
+            width: 90px;
+            height: 90px;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 4px solid var(--bg-card);
+            box-shadow: var(--shadow-md);
+            background-color: var(--bg-app);
+        }
+
+        .detail-meta {
+            padding-bottom: 8px;
+        }
+
+        .detail-name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-name {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .verified-badge {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        .detail-niche {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .detail-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .detail-bio {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .social-stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .stat-box {
+            background-color: var(--bg-pill);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .stat-icon {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .stat-value {
+            font-size: 0.95rem;
+            font-weight: 800;
+            font-family: var(--font-heading);
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .services-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .select-all-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            cursor: pointer;
+            transition: opacity var(--transition-fast);
+        }
+
+        .select-all-btn:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .services-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .service-item {
+            background-color: var(--bg-pill);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-fast);
+        }
+
+        .service-item:hover {
+            border-color: rgba(var(--accent-rgb), 0.3);
+            background-color: var(--bg-card-hover);
+        }
+
+        .service-item.selected {
+            border-color: var(--accent-color);
+            background-color: rgba(var(--accent-rgb), 0.05);
+        }
+
+        .service-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .service-checkbox {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            border: 2px solid var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.75rem;
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+        }
+
+        .service-item.selected .service-checkbox {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .service-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .service-desc {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .service-price {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--accent-color);
+        }
+
+        .detail-footer {
+            background-color: var(--bg-header);
+            border-top: 1px solid var(--border-color);
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .calculator-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calc-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calc-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .calc-subtitle {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .calc-total {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            transition: transform var(--transition-fast);
+        }
+
+        .calc-total.animate {
+            transform: scale(1.08);
+        }
+
+        .contact-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 20px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            filter: brightness(1.08);
+        }
+
+        .contact-btn:active {
+            transform: translateY(0);
+        }
+
+        .contact-btn i {
+            font-size: 1.15rem;
+        }
+
+        .creator-social-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .social-pill-link {
+            background-color: var(--bg-pill);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all var(--transition-fast);
+        }
+
+        .social-pill-link:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+            background-color: var(--bg-card-hover);
+        }
+
+        .detail-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .detail-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .detail-body::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 10px;
+        }
+
+        .detail-body::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* ==========================================================================
+           Mobile Breakpoints (Drawer Overlay Layout)
+           ========================================================================== */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .detail-section {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 80vh;
+                z-index: 100;
+                padding: 0 16px;
+                transform: translateY(100%);
+                transition: transform var(--transition-normal);
+                pointer-events: none;
+            }
+            .detail-section.active {
+                transform: translateY(0);
+                pointer-events: all;
+            }
+            .empty-state-detail {
+                display: none;
+            }
+            .creator-detail-card {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+            }
+            
+            .detail-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 99;
+                opacity: 0;
+                pointer-events: none;
+                backdrop-filter: blur(4px);
+                transition: opacity var(--transition-normal);
+            }
+            .detail-overlay.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+            
+            .mobile-close-btn {
+                display: flex !important;
+                position: absolute;
+                top: 14px;
+                right: 20px;
+                z-index: 10;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: rgba(0,0,0,0.4);
+                color: #fff;
+                border: none;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+
+        .mobile-close-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .app-header {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px;
+                gap: 14px;
+            }
+            
+            .search-filter-box {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+            }
+            
+            .category-filters {
+                overflow-x: auto;
+                padding-bottom: 4px;
+                mask-image: linear-gradient(to right, #000 85%, transparent);
+            }
+            
+            .filter-btn {
+                white-space: nowrap;
+            }
+            
+            .header-actions {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+            }
+            
+            .logo-area h1 {
+                font-size: 1.15rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                    <h1>Rate Card Duta Wisata 2026</h1>
+                    <p class="subtitle">Dinas Kebudayaan Dan Pariwisata Kota Batam</p>
+                </div>
+            </div>
+            
+            <div class="search-filter-box">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Cari nama atau niche...">
+                </div>
+                
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Semua</button>
+                    <button class="filter-btn" data-category="model">Model</button>
+                    <button class="filter-btn" data-category="lifestyle">Lifestyle</button>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="creators-section">
+                <h2 class="section-title">Telusuri Talent <span class="creator-count" id="creator-count">(0)</span></h2>
+                <div class="creator-grid" id="creator-grid">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </section>
+
+            <section class="detail-section" id="detail-section">
+                <div class="empty-state-detail" id="empty-state-detail">
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3>Pilih Kreator</h3>
+                    <p>Klik salah satu kreator di sebelah kiri untuk melihat detail rate card, portofolio, dan menghitung estimasi biaya.</p>
+                </div>
+
+                <div class="creator-detail-card hidden" id="creator-detail-card">
+                    <!-- Details content injected dynamically -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // --- DATASET CREATORS ---
+        const creators = [
+            {
+                id: "arya",
+                name: "Arya Syaputra",
+                niche: "Content Creator | Model",
+                bio: "Encik 1 Batam 2025. Berpengalaman di bidang modeling, promosi brand lokal, runway, dan pembuatan konten kreatif bertema lifestyle & fashion.",
+                tags: ["Pageant", "Model", "Lifestyle"],
+                accentRgb: "212, 175, 55", // Gold Accent
+                stats: {
+                    followers: "12.5K",
+                    engagement: "4.8%",
+                    projects: "40+"
+                },
+                socials: {
+                    instagram: "@aryasyaputra",
+                    tiktok: "@aryasyaputra",
+                    whatsapp: "6281234567890"
+                },
+                services: [
+                    { id: "ig-story", name: "Instagram Story", desc: "1x Posting, tag brand + Link swipe up. Aktif 24 jam.", price: 500000 },
+                    { id: "ig-feed", name: "Instagram Feed", desc: "1x Posting foto/carousel, tag brand & mention di caption. Minimal 30 hari.", price: 500000 },
+                    { id: "reels-tiktok", name: "Reels / TikTok Video", desc: "1x Video review/aesthetic (15-60 detik), high quality edit.", price: 500000 }
+                ],
+                avatarImg: "assets/img3.png" // Professional close-up studio portrait
+            },
+            {
+                id: "Fikri POSE",
+                name: "FIKRI POSEEE",
+                niche: "Content Creator | Fashion Model",
+                bio: "Influencer bertema fashion pria yang berfokus pada ulasan outfit harian (OOTD), batik modern lokal, serta gaya hidup kasual anak muda Batam.",
+                tags: ["Fashion", "Model", "Batik"],
+                accentRgb: "236, 72, 153", // Pink Accent
+                stats: {
+                    followers: "10.2K",
+                    engagement: "5.1%",
+                    projects: "30+"
+                },
+                socials: {
+                    instagram: "@alfajar",
+                    tiktok: "@alfajar.style",
+                    whatsapp: "6289876543210"
+                },
+                services: [
+                    { id: "ig-story", name: "Instagram Story", desc: "1x Posting dengan tag brand + tautan promo.", price: 500000 },
+                    { id: "ig-feed", name: "Instagram Feed (OOTD)", desc: "1x Posting foto berkonsep fashion lookbook/casual style.", price: 500000 },
+                    { id: "reels-tiktok", name: "Reels / TikTok Video", desc: "Video review produk fashion pria, unboxing, dan styling tips.", price: 500000 }
+                ],
+                avatarImg: "assets/img4.png" // Selfie profile
+            },
+            {
+                id: "nabiley",
+                name: "Nabiley",
+                niche: "Content Creator | Lifestyle Model",
+                bio: "Model dan content creator berambut ikal dengan gaya unik. Berfokus pada konten lifestyle, food traveling, dan review spot nongkrong estetik di Batam.",
+                tags: ["Lifestyle", "Travel", "Curly"],
+                accentRgb: "249, 115, 22", // Orange Accent
+                stats: {
+                    followers: "15.4K",
+                    engagement: "5.5%",
+                    projects: "50+"
+                },
+                socials: {
+                    instagram: "@nabiley",
+                    tiktok: "@nabiley.vlog",
+                    whatsapp: "6281122334455"
+                },
+                services: [
+                    { id: "ig-story", name: "Instagram Story Visit", desc: "1x Story foto/video langsung di lokasi cafe/resto/toko.", price: 500000 },
+                    { id: "ig-feed", name: "Instagram Feed Review", desc: "1x Posting feed foto aesthetic di tempat atau dengan produk Anda.", price: 500000 },
+                    { id: "reels-tiktok", name: "Reels / TikTok Review", desc: "Video review berdurasi 30-60 detik dengan voiceover interaktif.", price: 500000 }
+                ],
+                avatarImg: "assets/img1.png" // Grand Batam Mall photo
+            },
+            {
+                id: "Alfajar Madani",
+                name: "Alfajar Madani",
+                niche: "Professional Model | Content Creator",
+                bio: "Model komersial profesional yang berspesialisasi dalam pose studio, runway modeling, menswear katalog, dan promosi produk lifestyle.",
+                tags: ["Runway", "Photoshoot", "Style"],
+                accentRgb: "6, 182, 212", // Cyan Accent
+                stats: {
+                    followers: "18.1K",
+                    engagement: "6.2%",
+                    projects: "75+"
+                },
+                socials: {
+                    instagram: "@fikripose",
+                    tiktok: "@fikri.pose",
+                    whatsapp: "6285566778899"
+                },
+                services: [
+                    { id: "ig-story", name: "Instagram Story Promo", desc: "1x Posting, ulasan singkat produk, stiker interaktif.", price: 500000 },
+                    { id: "ig-feed", name: "Instagram Feed Studio", desc: "1x Posting foto katalog profesional beresolusi tinggi.", price: 500000 },
+                    { id: "reels-tiktok", name: "Reels / TikTok Showcase", desc: "Video cinematic aesthetic memamerkan produk menswear/aksesoris.", price: 500000 }
+                ],
+                avatarImg: "assets/img2.png" // Full body studio pose
+            }
+        ];
+
+        // --- APP STATE ---
+        let activeCreator = null;
+        let selectedServices = new Set();
+        let searchQuery = "";
+        let selectedCategory = "all";
+
+        // --- DOM ELEMENTS ---
+        const creatorGrid = document.getElementById("creator-grid");
+        const creatorCount = document.getElementById("creator-count");
+        const searchInput = document.getElementById("search-input");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const themeToggleBtn = document.getElementById("theme-toggle");
+        const emptyStateDetail = document.getElementById("empty-state-detail");
+        const creatorDetailCard = document.getElementById("creator-detail-card");
+        const detailSection = document.getElementById("detail-section");
+
+        // Mobile drawer overlay setup
+        const overlay = document.createElement("div");
+        overlay.className = "detail-overlay";
+        document.body.appendChild(overlay);
+
+        // --- UTILITY FUNCTIONS ---
+        function formatRupiah(number) {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(number);
+        }
+
+        // --- RENDER FUNCTION ---
+        function renderCreatorList() {
+            const filteredCreators = creators.filter(creator => {
+                const matchesCategory = selectedCategory === "all" || 
+                    creator.niche.toLowerCase().includes(selectedCategory) ||
+                    creator.tags.some(tag => tag.toLowerCase().includes(selectedCategory));
+                
+                const matchesSearch = creator.name.toLowerCase().includes(searchQuery) ||
+                    creator.niche.toLowerCase().includes(searchQuery) ||
+                    creator.tags.some(tag => tag.toLowerCase().includes(searchQuery));
+                    
+                return matchesCategory && matchesSearch;
+            });
+
+            creatorCount.textContent = `(${filteredCreators.length})`;
+
+            if (filteredCreators.length === 0) {
+                creatorGrid.innerHTML = `
+                    <div class="empty-state-detail" style="grid-column: 1/-1; height: auto; padding: 40px; border-style: dashed;">
+                        <div class="empty-icon"><i class="fa-solid fa-user-slash"></i></div>
+                        <h3>Kreator Tidak Ditemukan</h3>
+                        <p>Coba gunakan kata kunci pencarian atau kategori lain.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            creatorGrid.innerHTML = filteredCreators.map(creator => {
+                const isActive = activeCreator && activeCreator.id === creator.id ? "active" : "";
+                const tagsHtml = creator.tags.map(tag => `<span class="tag-badge">${tag}</span>`).join("");
+                
+                return `
+                    <div class="creator-card ${isActive}" data-id="${creator.id}" style="--card-accent-rgb: ${creator.accentRgb}">
+                        <div>
+                            <div class="card-top">
+                                <div class="avatar-wrapper">
+                                    <img src="${creator.avatarImg}" alt="${creator.name}" class="avatar-img">
+                                </div>
+                                <div class="card-info">
+                                    <h3 class="card-name">${creator.name}</h3>
+                                    <span class="card-niche">${creator.niche}</span>
+                                </div>
+                            </div>
+                            <p class="card-desc">${creator.bio}</p>
+                            <div class="card-tags">
+                                ${tagsHtml}
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="price-range">
+                                <span class="price-range-label">Mulai Dari</span>
+                                <span class="price-range-value">${formatRupiah(Math.min(...creator.services.map(s => s.price)))}</span>
+                            </div>
+                            <div class="select-arrow">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+
+            // Add click listeners to cards
+            document.querySelectorAll(".creator-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    const creatorId = card.getAttribute("data-id");
+                    selectCreator(creatorId);
+                });
+            });
+        }
+
+        // --- SELECT CREATOR ---
+        function selectCreator(creatorId) {
+            const creator = creators.find(c => c.id === creatorId);
+            if (!creator) return;
+
+            activeCreator = creator;
+            selectedServices.clear(); // Clear selections
+
+            // Apply accent theme coloring
+            document.documentElement.style.setProperty('--accent-rgb', creator.accentRgb);
+
+            document.querySelectorAll(".creator-card").forEach(card => {
+                if (card.getAttribute("data-id") === creator.id) {
+                    card.classList.add("active");
+                } else {
+                    card.classList.remove("active");
+                }
+            });
+
+            renderCreatorDetail(creator);
+            
+            emptyStateDetail.classList.add("hidden");
+            creatorDetailCard.classList.remove("hidden");
+            
+            // Drawer overlay behavior on mobile
+            detailSection.classList.add("active");
+            overlay.classList.add("active");
+        }
+
+        // --- RENDER DETAIL COMPONENT ---
+        function renderCreatorDetail(creator) {
+            const servicesHtml = creator.services.map(service => {
+                const isSelected = selectedServices.has(service.id) ? "selected" : "";
+                return `
+                    <div class="service-item ${isSelected}" data-service-id="${service.id}">
+                        <div class="service-left">
+                            <div class="service-checkbox">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="service-info">
+                                <span class="service-name">${service.name}</span>
+                                <span class="service-desc">${service.desc}</span>
+                            </div>
+                        </div>
+                        <span class="service-price">${formatRupiah(service.price)}</span>
+                    </div>
+                `;
+            }).join("");
+
+            creatorDetailCard.innerHTML = `
+                <button class="mobile-close-btn" id="mobile-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="detail-banner"></div>
+                <div class="detail-profile">
+                    <div class="detail-avatar-wrapper">
+                        <img src="${creator.avatarImg}" alt="${creator.name}" class="avatar-img">
+                    </div>
+                    <div class="detail-meta">
+                        <div class="detail-name-row">
+                            <h2 class="detail-name">${creator.name}</h2>
+                            <i class="fa-solid fa-circle-check verified-badge" title="Verified Creator"></i>
+                        </div>
+                        <div class="detail-niche">${creator.niche}</div>
+                        <div class="creator-social-links">
+                            <a href="https://instagram.com/${creator.socials.instagram.replace('@','')}" target="_blank" class="social-pill-link">
+                                <i class="fa-brands fa-instagram"></i> ${creator.socials.instagram}
+                            </a>
+                            <a href="https://tiktok.com/${creator.socials.tiktok.replace('@','')}" target="_blank" class="social-pill-link">
+                                <i class="fa-brands fa-tiktok"></i> ${creator.socials.tiktok}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-body">
+                    <p class="detail-bio">${creator.bio}</p>
+                    
+                    <div class="social-stats-row">
+                        <div class="stat-box">
+                            <i class="fa-solid fa-users stat-icon"></i>
+                            <span class="stat-value">${creator.stats.followers}</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fa-solid fa-bolt stat-icon"></i>
+                            <span class="stat-value">${creator.stats.engagement}</span>
+                            <span class="stat-label">Engagement</span>
+                        </div>
+                        <div class="stat-box">
+                            <i class="fa-solid fa-briefcase stat-icon"></i>
+                            <span class="stat-value">${creator.stats.projects}</span>
+                            <span class="stat-label">Collabs Done</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="services-title">
+                            <span>Layanan & Rate Card</span>
+                            <button class="select-all-btn" id="select-all-btn">Pilih Semua</button>
+                        </div>
+                        <div class="services-list">
+                            ${servicesHtml}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-footer">
+                    <div class="calculator-summary">
+                        <div class="calc-label">
+                            <span class="calc-title">Total Estimasi</span>
+                            <span class="calc-subtitle" id="selected-count-label">0 Layanan dipilih</span>
+                        </div>
+                        <div class="calc-total" id="calc-total">Rp0</div>
+                    </div>
+                    <button class="contact-btn" id="whatsapp-order-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Hubungi untuk Kolaborasi
+                    </button>
+                </div>
+            `;
+
+            setupDetailEventListeners(creator);
+        }
+
+        // --- HOOK LISTENERS ---
+        function setupDetailEventListeners(creator) {
+            document.querySelectorAll(".service-item").forEach(item => {
+                item.addEventListener("click", () => {
+                    const serviceId = item.getAttribute("data-service-id");
+                    if (selectedServices.has(serviceId)) {
+                        selectedServices.delete(serviceId);
+                        item.classList.remove("selected");
+                    } else {
+                        selectedServices.add(serviceId);
+                        item.classList.add("selected");
+                    }
+                    updateCalculator();
+                });
+            });
+
+            const selectAllBtn = document.getElementById("select-all-btn");
+            selectAllBtn.addEventListener("click", () => {
+                const allSelected = selectedServices.size === creator.services.length;
+                document.querySelectorAll(".service-item").forEach(item => {
+                    const serviceId = item.getAttribute("data-service-id");
+                    if (allSelected) {
+                        selectedServices.delete(serviceId);
+                        item.classList.remove("selected");
+                    } else {
+                        selectedServices.add(serviceId);
+                        item.classList.add("selected");
+                    }
+                });
+                selectAllBtn.textContent = allSelected ? "Pilih Semua" : "Hapus Semua";
+                updateCalculator();
+            });
+
+            document.getElementById("whatsapp-order-btn").addEventListener("click", () => {
+                openWhatsAppChat(creator);
+            });
+
+            document.getElementById("mobile-close-btn").addEventListener("click", closeMobileDrawer);
+        }
+
+        // --- CALCULATOR CALCULATION ---
+        function updateCalculator() {
+            if (!activeCreator) return;
+            
+            let total = 0;
+            activeCreator.services.forEach(service => {
+                if (selectedServices.has(service.id)) {
+                    total += service.price;
+                }
+            });
+
+            const totalEl = document.getElementById("calc-total");
+            const countLabelEl = document.getElementById("selected-count-label");
+
+            totalEl.classList.add("animate");
+            setTimeout(() => totalEl.classList.remove("animate"), 150);
+
+            totalEl.textContent = formatRupiah(total);
+            countLabelEl.textContent = `${selectedServices.size} Layanan dipilih`;
+
+            const selectAllBtn = document.getElementById("select-all-btn");
+            if (selectAllBtn) {
+                if (selectedServices.size === activeCreator.services.length) {
+                    selectAllBtn.textContent = "Hapus Semua";
+                } else {
+                    selectAllBtn.textContent = "Pilih Semua";
+                }
+            }
+        }
+
+        // --- MOBILE DRAWER CLOSE ---
+        function closeMobileDrawer() {
+            detailSection.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        // --- WHATSAPP TEXT BUILDER ---
+        function openWhatsAppChat(creator) {
+            const baseText = `Halo ${creator.name}, saya tertarik untuk bekerjasama.`;
+            let servicesText = "";
+            let totalAmount = 0;
+
+            if (selectedServices.size > 0) {
+                servicesText = "\n\nSaya ingin memesan layanan berikut:\n";
+                creator.services.forEach(service => {
+                    if (selectedServices.has(service.id)) {
+                        servicesText += `- ${service.name} (${formatRupiah(service.price)})\n`;
+                        totalAmount += service.price;
+                    }
+                });
+                servicesText += `\n*Total Estimasi: ${formatRupiah(totalAmount)}*`;
+            } else {
+                servicesText = "\n\nBisa minta info lengkap mengenai slot kerjasama & detail rate card Anda?";
+            }
+
+            const footerText = `\n\nHubungi saya kembali di nomor ini ya. Terima kasih!`;
+            const fullMessage = encodeURIComponent(baseText + servicesText + footerText);
+            const whatsappUrl = `https://wa.me/${creator.socials.whatsapp}?text=${fullMessage}`;
+            window.open(whatsappUrl, "_blank");
+        }
+
+        // --- SEARCH & FILTER LISTENERS ---
+        searchInput.addEventListener("input", (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            renderCreatorList();
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                selectedCategory = btn.getAttribute("data-category");
+                renderCreatorList();
+            });
+        });
+
+        overlay.addEventListener("click", closeMobileDrawer);
+
+        // --- THEME TOGGLE ---
+        themeToggleBtn.addEventListener("click", () => {
+            if (document.body.classList.contains("dark-theme")) {
+                document.body.classList.replace("dark-theme", "light-theme");
+                localStorage.setItem("theme", "light");
+            } else {
+                document.body.classList.replace("light-theme", "dark-theme");
+                localStorage.setItem("theme", "dark");
+            }
+        });
+
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        if (savedTheme === "light") {
+            document.body.classList.replace("dark-theme", "light-theme");
+        }
+
+        // --- INIT ---
+        window.addEventListener("DOMContentLoaded", () => {
+            renderCreatorList();
+        });
+    </script>
+</body>
+</html>
