@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Rate Card Hub</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <!-- App Background Elements -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="app-container">
+        <!-- Sidebar / Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                    <h1>CreatorHub</h1>
+                    <p class="subtitle">Premium Rate Card Directory</p>
+                </div>
+            </div>
+            
+            <div class="search-filter-box">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Cari nama atau niche...">
+                </div>
+                
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Semua</button>
+                    <button class="filter-btn" data-category="model">Model</button>
+                    <button class="filter-btn" data-category="beauty">Beauty</button>
+                    <button class="filter-btn" data-category="tech">Tech</button>
+                    <button class="filter-btn" data-category="food">Food</button>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun icon-sun"></i>
+                    <i class="fa-solid fa-moon icon-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Layout -->
+        <main class="main-content">
+            <!-- Left Side: Creator List Grid -->
+            <section class="creators-section">
+                <h2 class="section-title">Telusuri Talent <span class="creator-count" id="creator-count">(0)</span></h2>
+                <div class="creator-grid" id="creator-grid">
+                    <!-- Dynamic Creator Cards go here -->
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </section>
+
+            <!-- Right Side: Active Creator Details & Calculator -->
+            <section class="detail-section" id="detail-section">
+                <div class="empty-state-detail" id="empty-state-detail">
+                    <div class="empty-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3>Pilih Kreator</h3>
+                    <p>Klik salah satu kreator di sebelah kiri untuk melihat detail rate card, portofolio, dan menghitung estimasi biaya.</p>
+                </div>
+
+                <div class="creator-detail-card hidden" id="creator-detail-card">
+                    <!-- Dynamic details content injected here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script -->
+    <script src="app.js"></script>
+</body>
+</html>
